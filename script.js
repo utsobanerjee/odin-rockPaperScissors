@@ -21,15 +21,15 @@ function getComputerChoice(){
 function playRound(playerChoice,computerChoice){
 
     if(playerChoice === "rock" && computerChoice === "scissor"){
-        return `You win! ${playerChoice} beats ${computerChoice}`
+        return `You win! Your choice was ${playerChoice} , Computer's choice was ${computerChoice}\n ${playerChoice} beats ${computerChoice}`
     } else if(playerChoice === "scissor" && computerChoice === "paper"){
-        return `You win! ${playerChoice} beats ${computerChoice}`
+        return `You win! Your choice was ${playerChoice} , Computer's choice was ${computerChoice}\n ${playerChoice} beats ${computerChoice}`
     }else if(playerChoice === "paper" && computerChoice ==="rock"){
-        return `You win! ${playerChoice} beats ${computerChoice}`
+        return `You win! Your choice was ${playerChoice} , Computer's choice was ${computerChoice}\n ${playerChoice} beats ${computerChoice}`
     } else if(playerChoice === computerChoice){
         return `It's a tie! Both you entered ${playerChoice}`
     } else {
-        return `You loose! ${computerChoice} beats ${playerChoice}`
+        return `You loose! Your choice was ${playerChoice} , Computer's choice was ${computerChoice}\n ${computerChoice} beats ${playerChoice}`
     }
     
 }
@@ -50,6 +50,8 @@ function playGame(){
     let playerScore =0;
     let computerScore =0;
 
+    alert("Starting a game of 5 rounds between you and computer!")
+
     for (let i=0; i<5 ; i++){
         let playerChoice = prompt("rock , paper or scissor ?");
         let computerChoice = getComputerChoice();
@@ -64,14 +66,14 @@ function playGame(){
         if(result.match(/win/i)){
             alert(result);
             playerScore++;
-            console.log(`${i+1} round , Computer Score is ${computerScore} and Player Score is ${playerScore}`);
+            alert(`${i+1} round , Computer Score is ${computerScore} and Your Score is ${playerScore}`);
         }else if(result.match(/loose/i)){
             alert(result);
             computerScore++;
-            console.log(`${i+1} round , Computer Score is ${computerScore} and Player Score is ${playerScore}`);
+            alert(`${i+1} round , Computer Score is ${computerScore} and Your Score is ${playerScore}`);
         }else if(result.match(/tie/i)){
             alert(result);
-            console.log(`${i+1} round , Computer Score is ${computerScore} and Player Score is ${playerScore}`);
+            alert(`${i+1} round , Computer Score is ${computerScore} and Your Score is ${playerScore}`);
         }
     }
     if(playerScore === computerScore){
